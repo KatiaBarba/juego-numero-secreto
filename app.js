@@ -42,10 +42,7 @@ function verificarIntento()
 
 function generarNumeroSecreto() 
 {
-
-   // let numQSalio = []
     let numeroGenerado = Math.floor(Math.random() * numeroMaximo) + 1; //floor para retornar solo numeros enteros;
-    
     // si ya sorteamos todos los numeros posibles
     if(listaNumerosSorteados.length == numeroMaximo)
     {
@@ -53,12 +50,12 @@ function generarNumeroSecreto()
     }
     else
     {
-        // si el numero generado esta en la lista
-        if(listaNumerosSorteados.includes(numeroGenerado) )//&& numeroGenerado )
+        // si el numero generado esta en la lista:
+        if(listaNumerosSorteados.includes(numeroGenerado) )
             {
-                return generarNumeroSecreto();
+                return generarNumeroSecreto(); // Recursividad, la funcion se llama a si misma
             }
-            else
+            else // Si el numero generado, no esta en la lista:
             {   
                 listaNumerosSorteados.push(numeroGenerado);
                 console.log(numeroGenerado);
